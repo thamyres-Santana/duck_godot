@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://keh1awgjfnxx"]
+
+[ext_resource type="Script" path="res://patinha.gd" id="1_mc48x"]
+[ext_resource type="Texture2D" uid="uid://tmfx3gm21mud" path="res://assets/Art Assets/Characters/Duck Girl/DuckGirl.png" id="1_vg212"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8g1s"]
+size = Vector2(15, 20)
+
+[node name="patinha" type="Area2D"]
+script = ExtResource("1_mc48x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vg212")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_o8g1s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
